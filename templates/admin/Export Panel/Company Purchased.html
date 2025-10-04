@@ -1,0 +1,370 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <!-- Meta tags for character encoding, compatibility, SEO -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="robots" content="" />
+    <meta name="description" content="" />
+
+    <!-- Favicon and shortcut icon -->
+    <link rel="icon" href="{% static 'Static Home/images/Logo Two.png' %}" type="image/x-icon" />
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'Static Home/images/favicon.png' %}" />
+
+    <!-- Page title -->
+    <title>میگوبازار || پنل صادرکننده</title>
+
+    <!-- Mobile responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="{% static 'Static Home/css/bootstrap.rtl.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'Static Home/css/font-awesome.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'Static Home/css/feather.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'Static Home/css/owl.carousel.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'Static Home/css/magnific-popup.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'Static Home/css/lc_lightbox.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'Static Home/css/bootstrap-select.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'Static Home/css/dataTables.bootstrap5.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'Static Home/css/select.bootstrap5.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'Static Home/css/dropzone.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'Static Home/css/scrollbar.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'Static Home/css/datepicker.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'Static Home/css/flaticon.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'Static Home/css/swiper-bundle.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'Static Home/css/style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'Static Home/css/rtl.css' %}" />
+    <link rel="stylesheet" class="skin" type="text/css" href="{% static 'Static Home/css/skin-6.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'Static Home/css/switcher.css' %}" />
+
+    <!-- Custom CSS for product cards -->
+    <style>
+      .product-card {
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      }
+      .product-card h5 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      .product-info {
+        font-size: 14px;
+        margin-bottom: 6px;
+      }
+      .product-code {
+        font-weight: bold;
+        color: #007bff;
+      }
+    </style>
+  </head>
+
+  <body data-anm=".anm">
+    <div class="page-wraper">
+      <!-- Header section with logo, navigation, and logout button -->
+      <header class="site-header header-style-3 mobile-sider-drawer-menu">
+        <div class="sticky-header main-bar-wraper navbar-expand-lg">
+          <div class="main-bar">
+            <div class="container-fluid clearfix">
+              <!-- Logo -->
+              <div class="logo-header">
+                <div class="logo-header-inner logo-header-one">
+                  <a href="{% url 'home' %}">
+                    <img style="height: 70px; width: 140px;" src="{% static 'Static Home/images/Logo Two.png' %}" alt="Logo" />
+                  </a>
+                </div>
+              </div>
+
+              <!-- Mobile menu toggle button -->
+              <button id="mobile-side-drawer" data-target=".header-nav" data-toggle="collapse" type="button" class="navbar-toggler collapsed">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar icon-bar-first"></span>
+                <span class="icon-bar icon-bar-two"></span>
+                <span class="icon-bar icon-bar-three"></span>
+              </button>
+
+              <!-- Main navigation menu -->
+              <div class="nav-animation header-nav navbar-collapse collapse d-flex justify-content-center">
+                <ul class="nav navbar-nav">
+                  <li class="has-mega-menu"><a href="{% url 'home' %}">خانه</a></li>
+                  <li><a href="{% url "about" %}">درباره ما</a></li>
+                  <li><a href="{% url 'product' %}">محصولات</a></li>
+                  <li><a href="{% url 'company' %}">شرکت های فعال</a></li>
+                  <li><a href="">پرسش و پاسخ</a></li>
+                  <li><a href="{% url "contact" %}">تماس با ما</a></li>
+                </ul>
+              </div>
+
+              <!-- Header right: Logout link -->
+              <div dir="ltr" class="extra-nav header-2-nav">
+                <div class="extra-cell">
+                  <div class="header-nav-btn-section">
+                    <div class="twm-nav-btn-left">
+                      <a class="twm-nav-sign-up" href="{% url 'export_dashboard_company_logout' %}">
+                        <i class="fa fa-sign-out-alt"></i> خروج از سامانه
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <div class="page-content">
+        <!-- Banner with title and breadcrumb -->
+        <div class="wt-bnr-inr overlay-wraper bg-center" style="background-image:url({% static 'Static Home/images/1.jpg' %});">
+          <div class="overlay-main site-bg-white opacity-01"></div>
+          <div class="container">
+            <div class="wt-bnr-inr-entry">
+              <div class="banner-title-outer">
+                <h2 class="wt-title" style="margin-bottom: 10px;">پنل شرکت صادرکننده میگو</h2>
+              </div>
+              <ul class="wt-breadcrumb breadcrumb-style-2">
+                <li><a href="{% url 'export_dashboard_info' %}">پنل مدیریت</a></li>
+                <li>محصولات خریداری شده</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Purchased products listing section -->
+        <div class="section-full p-t120 p-b90 site-bg-white bg-cover twm-ac-fresher-wrap" style="background-image:url({% static 'Static Home/images/pattern.jpg' %})">
+          <div class="section-full p-t120 p-b90" style="margin-top: -80px;">
+            <div class="container">
+              <div class="row">
+                <!-- Sidebar navigation -->
+                <div class="col-xl-3 col-lg-4 col-md-12 rightSidebar m-b30">
+                  <div class="side-bar-st-1">
+                    <!-- Company logo preview -->
+                    <div class="twm-candidate-profile-pic">
+                      {% if company_logo %}
+                        <img src="{{ company_logo }}" id="logoPreviewSidebar" alt="لوگو" />
+                      {% else %}
+                        <p>بدون لوگو</p>
+                      {% endif %}
+                    </div>
+
+                    <!-- Sidebar menu -->
+                    <div class="twm-nav-list-1">
+                      <ul>
+                        <li><a href="{% url 'export_dashboard_info' %}"><i class="fa fa-user"></i> اطلاعات شرکت</a></li>
+                        <li class="active"><a href="{% url 'export_dashboard_purchased' %}"><i class="fa fa-shopping-cart"></i> محصولات خریداری‌شده</a></li>
+                        <li><a href="{% url 'export_dashboard_create_product_package' %}"><i class="fa fa-qrcode"></i> هویت‌دهی به میگو</a></li>
+                        <li><a href="{% url 'export_dashboard_company_logout' %}"><i class="fa fa-sign-out-alt"></i> خروج</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Main content: List of purchased products -->
+                <div class="col-xl-9 col-lg-8 col-md-12 m-b30">
+                  <div class="twm-right-section-panel site-bg-gray">
+                    <div class="panel panel-default">
+                      <div class="panel-heading wt-panel-heading p-a20">
+                        <h4 class="panel-tittle m-a0" style="font-family: rubik black;">لیست محصولات خریداری شده</h4>
+                      </div>
+                      <div class="panel-body wt-panel-body p-a20">
+                        <div class="row">
+                          {% for request in approved_requests %}
+                            <div class="col-md-6 col-lg-4">
+                              <div class="product-card">
+                                <h5>{{ request.product.product_name }}</h5>
+                                <div class="product-info"><strong>کد محصول:</strong> <span class="product-code">{{ request.product.support_code }}</span></div>
+                                <div class="product-info"><strong>از شرکت:</strong> {{ request.owner_company.company_name|default:"نام شرکت مشخص نیست" }}</div>
+                                <div class="product-info"><strong>تاریخ خرید:</strong> {{ request.operation_date|date:"Y/m/d" }}</div>
+                              </div>
+                            </div>
+                          {% empty %}
+                            <div class="col-12">
+                              <p>هیچ محصول خریداری شده‌ای یافت نشد.</p>
+                            </div>
+                          {% endfor %}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer section -->
+      <footer id="footer" class="footer-light">
+        <div class="container">
+          <!-- Newsletter subscription form -->
+          <div class="ftr-nw-content">
+            <div class="row">
+              <div class="col-md-5">
+                <div class="ftr-nw-title" style="font-family: IRANSansWeb;">
+                  با جستجو میتوانید سریعتر به اهداف خود در سایت دسترسی پیدا کنید....
+                </div>
+              </div>
+              <div class="col-md-7">
+                <form>
+                  <div class="ftr-nw-form">
+                    <input name="news-letter" class="form-control" placeholder="همین حالا جستجو کنید..." type="text" />
+                    <button class="ftr-nw-subcribe-btn">پیداش کن!</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer links -->
+          <div class="footer-top">
+            <div class="row">
+              <!-- Company info -->
+              <div class="col-lg-3 col-md-12">
+                <div class="widget widget_about">
+                  <div class="logo-footer clearfix">
+                    <a href="index.html"><img src="{% static 'Static Home/images/Logo Two.png' %}" alt="Migobazar Logo" /></a>
+                  </div>
+                  <p>سایت میگوبازار توسط تیمی متشکل از پنج دانش آموز مدرسه ی زنده یاد کردی برازجان تهیه شده است</p>
+                  <ul class="ftr-list">
+                    <li><p><span>آدرس:</span>برازجان،فرمانداری،خیابان نبوت</p></li>
+                    <li><p><span>ایمیل:</span>meigobazar@gmail.com</p></li>
+                    <li><p><span>شماره تلفن:</span>09301660591</p></li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Navigation columns -->
+              <div class="col-lg-9 col-md-12">
+                <div class="row">
+                  <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="widget widget_services ftr-list-center">
+                      <h3 class="widget-title">صفحه اصلی</h3>
+                      <ul>
+                        <li><a href="{% url 'home' %}">خانه</a></li>
+                        <li><a href="{% url 'home' %}#karbaran">کاربران</a></li>
+                        <li><a href="{% url 'home' %}#vigegi">ویژگی ها</a></li>
+                        <li><a href="{% url 'home' %}#mazaia">مزایای سامانه</a></li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="widget widget_services ftr-list-center">
+                      <h3 class="widget-title">بقیه صفحات</h3>
+                      <ul>
+                        <li><a href="">درباره ما</a></li>
+                        <li><a href="{% url 'product' %}">محصولات</a></li>
+                        <li><a href="{% url 'company' %}">شرکت های فعال</a></li>
+                        <li><a href="">پرسش و پاسخ</a></li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="widget widget_services ftr-list-center">
+                      <h3 class="widget-title">کاربران سامانه</h3>
+                      <ul>
+                        <li><a>شرکت پرورش میگو</a></li>
+                        <li><a>شرکت صادر کننده میگو</a></li>
+                        <li><a>خریداران میگو</a></li>
+                        <li><a>رانندگان</a></li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="widget widget_services ftr-list-center">
+                      <h3 class="widget-title">سازندگان</h3>
+                      <ul>
+                        <li><a>امیر حسین غلامی</a></li>
+                        <li><a>ارشاد مزارعی نژاد</a></li>
+                        <li><a>حسن نظامات</a></li>
+                        <li><a>علی ظرافت</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Copyright notice -->
+          <div class="footer-bottom">
+            <div class="footer-bottom-info">
+              <div class="footer-copy-right">
+                <span class="copyrights-text">تمامی حقوق این اثر متعلق به تیم سازنده ی آن است © 2025 ...</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- Scroll to top button -->
+      <button class="scroltop"><span class="fa fa-angle-up relative" id="btn-vibrate"></span></button>
+
+      <!-- Login/Signup modal popup -->
+      <div class="modal fade twm-sign-up" id="sign_up_popup" aria-hidden="true" aria-labelledby="sign_up_popupLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <form style="height: 400px;">
+              <div class="modal-header">
+                <h2 class="modal-title" id="sign_up_popupLabel">خوش اومدی...</h2>
+                <p>اگر حساب نداری ثبت نام کن و در غیر اینصورت وارد حسابت شو...</p>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="col-md-12">
+                <button type="button" class="site-button" onclick="window.location.href='{% url 'register' %}'">ثبت نام</button>
+                <br />
+                <button type="button" class="site-button" onclick="window.location.href='{% url 'login' %}'">ورود</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript files -->
+    <script src="{% static 'Static Home/js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'Static Home/js/popper.min.js' %}"></script>
+    <script src="{% static 'Static Home/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'Static Home/js/magnific-popup.min.js' %}"></script>
+    <script src="{% static 'Static Home/js/waypoints.min.js' %}"></script>
+    <script src="{% static 'Static Home/js/counterup.min.js' %}"></script>
+    <script src="{% static 'Static Home/js/waypoints-sticky.min.js' %}"></script>
+    <script src="{% static 'Static Home/js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'Static Home/js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'Static Home/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'Static Home/js/theia-sticky-sidebar.js' %}"></script>
+    <script src="{% static 'Static Home/js/lc_lightbox.lite.js' %}"></script>
+    <script src="{% static 'Static Home/js/bootstrap-select.min.js' %}"></script>
+    <script src="{% static 'Static Home/js/dropzone.js' %}"></script>
+    <script src="{% static 'Static Home/js/jquery.scrollbar.js' %}"></script>
+    <script src="{% static 'Static Home/js/bootstrap-datepicker.js' %}"></script>
+    <script src="{% static 'Static Home/js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'Static Home/js/dataTables.bootstrap5.min.js' %}"></script>
+    <script src="{% static 'Static Home/js/chart.js' %}"></script>
+    <script src="{% static 'Static Home/js/anm.js' %}"></script>
+    <script src="{% static 'Static Home/js/bootstrap-slider.min.js' %}"></script>
+    <script src="{% static 'Static Home/js/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'Static Home/js/custom.js' %}"></script>
+    <script src="{% static 'Static Home/js/switcher.js' %}"></script>
+
+    <!-- Script to load saved logo from localStorage into sidebar -->
+    <script>
+      $(document).ready(function() {
+        const savedLogo = localStorage.getItem('exporterLogo');
+        if (savedLogo) {
+          $("#logoPreviewSidebar").attr("src", savedLogo);
+        }
+      });
+    </script>
+  </body>
+</html>
