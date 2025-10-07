@@ -4,8 +4,8 @@ Follow these steps to set up the project on your local machine:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/AmirHosseinGholami-DEV/School-Management-System.git
-cd School-Management-System
+git clone https://github.com/AmirHosseinGholami-DEV/Shrimp-Shop-System.git
+cd Shrimp-Shop-System.
 ```
 ### 2. Set Up a Virtual Environment
 ```bash
