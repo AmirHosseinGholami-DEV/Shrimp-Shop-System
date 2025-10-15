@@ -113,7 +113,7 @@ class ExporterPurchasedView(View):
         approved_requests = RequestsProduct.objects.filter(
             buyer_company=company,
             status='approved'
-        ).select_related('product', 'owner_company').order_by('-created_at')
+        ).select_related('product', 'owner_company').order_by('-operation_date')
 
         return render(request, self.template_name, {
             'approved_requests': approved_requests,

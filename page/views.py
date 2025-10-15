@@ -189,7 +189,7 @@ class ContactView(View):
     POST: Validate input, save message, show success/error
     Stores client IP for spam monitoring.
     """
-    template_name = 'page/contact.html'
+    template_name = 'page/Contact.html'
 
     def get(self, request):
         """Render blank contact form."""
